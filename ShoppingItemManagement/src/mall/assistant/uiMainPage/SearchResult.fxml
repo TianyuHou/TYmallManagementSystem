@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="SearchResult" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="380.0" style="-fx-background-color: white;" stylesheets="@searchResult.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.uiMainPage.SearchResultController">
+   <children>
+      <VBox prefHeight="420.0" prefWidth="380.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="searchresultlabel" prefHeight="70.0" prefWidth="188.0" text="Search Result" textFill="#6e6e6e">
+               <VBox.margin>
+                  <Insets left="110.0" right="95.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Label>
+            <VBox id="searchresult" prefHeight="270.0" prefWidth="380.0">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Item ID:" textFill="#2f2f2f">
+                           <HBox.margin>
+                              <Insets left="110.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="itemid" prefHeight="19.0" prefWidth="139.0" underline="true">
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Category:" textFill="#2f2f2f">
+                           <HBox.margin>
+                              <Insets left="110.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="itemcategory" prefHeight="19.0" prefWidth="114.0" underline="true">
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Name:" textFill="#2f2f2f">
+                           <HBox.margin>
+                              <Insets left="110.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="itemname" prefHeight="19.0" prefWidth="115.0" underline="true">
+                           <HBox.margin>
+                              <Insets left="30.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Price:" textFill="#2f2f2f">
+                           <HBox.margin>
+                              <Insets left="110.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="itemprice" prefHeight="19.0" prefWidth="125.0" underline="true">
+                           <HBox.margin>
+                              <Insets left="38.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Inventory:" textFill="#2f2f2f">
+                           <HBox.margin>
+                              <Insets left="110.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="iteminventory" prefHeight="19.0" prefWidth="119.0" underline="true">
+                           <HBox.margin>
+                              <Insets left="12.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <JFXButton fx:id="searchClosebtn" buttonType="RAISED" onAction="#closeWindow" prefHeight="60.0" prefWidth="190.0" styleClass="save_btn" stylesheets="@searchResult.css" text="CLOSE" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="95.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

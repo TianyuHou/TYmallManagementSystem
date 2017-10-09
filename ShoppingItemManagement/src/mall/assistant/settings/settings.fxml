@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.settings.settingsController">
+   <children>
+      <VBox layoutX="100.0" prefHeight="200.0" prefWidth="300.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="270.0" layoutY="20.0" onMouseClicked="#close" size="16" styleClass="closebtn" />
+               </children>
+            </Pane>
+            <JFXTextField fx:id="username" labelFloat="true" prefHeight="30.0" prefWidth="240.0" promptText="New Username" styleClass="edit_textfield" stylesheets="@settings.css">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="password" labelFloat="true" prefHeight="30.0" prefWidth="240.0" promptText="New Password" styleClass="edit_textfield" stylesheets="@settings.css">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="password2" labelFloat="true" prefHeight="30.0" prefWidth="240.0" promptText="Type Again" styleClass="edit_textfield" stylesheets="@settings.css">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXButton fx:id="savebtn" buttonType="RAISED" prefHeight="50.0" prefWidth="100.0" styleClass="savebtn" stylesheets="@settings.css" text="SAVE" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

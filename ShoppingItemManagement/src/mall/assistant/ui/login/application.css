@@ -1,0 +1,34 @@
+#root{
+	-fx-background-color: #263238;
+}
+#username{
+	-fx-text-fill: #F5F5F5;
+}
+#loginbtn{
+	-fx-background-color: #90A4AE;
+}
+#loginbtn:hover{
+	-fx-background-color: #1565C0;
+}
+#signupbtn{
+	-fx-background-color: #ef5350;
+}
+#signupbtn:hover{
+	-fx-background-color: #c62828;
+}
+.menubar{
+	-fx-background-color: #424242;
+	-fx-text-fill: white;
+}
+.menubar:hover{
+	-fx-background-color: #37474F;
+}
+.controlbtn{
+	-fx-fill:gray;
+}
+.controlbtn:hover{
+	-fx-fill:#3c749e;
+}
+#forgetlink{
+	-fx-text-fill: #3c749e;
+}

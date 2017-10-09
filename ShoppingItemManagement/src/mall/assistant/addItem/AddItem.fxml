@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="420.0" prefWidth="380.0" style="-fx-background-color: #E0E0E0#E0E0E0;" stylesheets="@additem.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.addItem.addItemController">
+   <children>
+      <VBox layoutX="43.0" layoutY="43.0" prefHeight="350.0" prefWidth="380.0" stylesheets="@additem.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="20.0" prefWidth="380.0" stylesheets="@additem.css">
+               <children>
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="352.0" layoutY="20.0" onMouseClicked="#exit" size="16" styleClass="closebtn" />
+                  <FontAwesomeIconView glyphName="MINUS" layoutX="322.0" layoutY="20.0" onMouseClicked="#minimizeWindow" size="16" styleClass="minusbtn" />
+               </children>
+            </Pane>
+            <JFXTextField fx:id="itemID" labelFloat="true" promptText="Item ID" styleClass="edit_textfield" stylesheets="@additem.css">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="itemCategory" labelFloat="true" layoutX="30.0" layoutY="25.0" promptText="Item CategoryID" styleClass="edit_textfield" stylesheets="@additem.css">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="40.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="itemName" labelFloat="true" promptText="Item Name" styleClass="edit_textfield" stylesheets="@additem.css">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="40.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="itemPrice" labelFloat="true" promptText="Item Price" styleClass="edit_textfield" stylesheets="@additem.css">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="40.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="itemInventory" labelFloat="true" promptText="Item Inventory" styleClass="edit_textfield" stylesheets="@additem.css">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="40.0" />
+               </VBox.margin>
+            </JFXTextField>
+         </children>
+      </VBox>
+      <HBox layoutX="26.0" layoutY="320.0" prefHeight="60.0" prefWidth="380.0" style="-fx-background-color: #1565C0;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXButton fx:id="savebtn" buttonType="RAISED" onAction="#addItem" prefHeight="60.0" prefWidth="190.0" styleClass="save_btn" stylesheets="@additem.css" text="SAVE" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancelbtn" buttonType="RAISED" onAction="#cancel" prefHeight="60.0" prefWidth="190.0" styleClass="cancel_btn" stylesheets="@additem.css" text="CANCEL" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

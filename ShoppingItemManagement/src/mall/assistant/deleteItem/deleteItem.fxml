@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="380.0" style="-fx-background-color: #E0E0E0#E0E0E0;" stylesheets="@deleteItem.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.deleteItem.deleteItemController">
+   <children>
+      <VBox prefHeight="420.0" prefWidth="380.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="80.0" prefWidth="380.0" style="-fx-background-color: #E0E0E0#E0E0E0;" stylesheets="@deleteItem.css">
+               <children>
+                  <JFXTextField fx:id="searchItem" layoutX="108.0" layoutY="29.0" onAction="#searchItem" promptText="Search By ID/Name" unFocusColor="#696868">
+                     <font>
+                        <Font name="Arial Italic" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <FontAwesomeIconView id="searchbtn" fx:id="searchItembtn" glyphName="SEARCH" layoutX="259.0" layoutY="49.0" onMouseClicked="#searchItem" size="16" />
+               </children>
+            </Pane>
+            <ListView fx:id="listItem" prefHeight="280.0" prefWidth="380.0" />
+            <HBox prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #1565C0;">
+               <children>
+                  <JFXButton fx:id="deleteItembtn" buttonType="RAISED" onAction="#deleteItem" prefHeight="60.0" prefWidth="190.0" styleClass="save_btn" text="DELETE" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="cancelbtn" buttonType="RAISED" onAction="#cancel" prefHeight="60.0" prefWidth="190.0" styleClass="cancel_btn" text="CANCEL" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

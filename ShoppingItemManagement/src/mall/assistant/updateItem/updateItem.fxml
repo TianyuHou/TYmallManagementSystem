@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="420.0" prefWidth="380.0" style="-fx-background-color: #E0E0E0#E0E0E0;" stylesheets="@updateItem.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.updateItem.updateItemController">
+   <children>
+      <VBox prefHeight="420.0" prefWidth="380.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="80.0" prefWidth="380.0" style="-fx-background-color: #E0E0E0;" stylesheets="@updateItem.css">
+               <children>
+                  <Label layoutX="118.0" layoutY="29.0" text="Item Information" textFill="#8b8b8b">
+                     <font>
+                        <Font name="Arial Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="MINUS" layoutX="322.0" layoutY="20.0" onMouseClicked="#minimizeWindow" size="16" styleClass="minusbtn" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="352.0" layoutY="20.0" onMouseClicked="#exit" size="16" styleClass="closebtn" />
+               </children>
+            </Pane>
+            <VBox prefHeight="280.0" prefWidth="100.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="updatelabel" text="Item ID" textFill="#8b8b8b">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="itemID" prefWidth="150.0" styleClass="updateedit" unFocusColor="#bcbcbc">
+                           <HBox.margin>
+                              <Insets left="65.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="updatelabel" text="Item Name" textFill="#8b8b8b">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="itemName" prefWidth="150.0" styleClass="updateedit" unFocusColor="#bcbcbc">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="updatelabel" text="Item CategoryID" textFill="#8b8b8b">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="itemCid" prefWidth="150.0" styleClass="updateedit" unFocusColor="#bcbcbc">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="updatelabel" text="Item Price" textFill="#8b8b8b">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="itemPrice" prefWidth="150.0" styleClass="updateedit" unFocusColor="#bcbcbc">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label styleClass="updatelabel" text="Item Inventory" textFill="#8b8b8b">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="itemInventory" prefWidth="150.0" styleClass="updateedit" unFocusColor="#bcbcbc">
+                           <HBox.margin>
+                              <Insets left="22.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #1565C0;">
+               <children>
+                  <JFXButton fx:id="updateItembtn" buttonType="RAISED" onAction="#update" prefHeight="60.0" prefWidth="190.0" styleClass="save_btn" stylesheets="@updateItem.css" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="cancelbtn" buttonType="RAISED" onAction="#cancel" prefHeight="60.0" prefWidth="190.0" styleClass="cancel_btn" stylesheets="@updateItem.css" text="CANCEL" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

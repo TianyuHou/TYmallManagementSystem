@@ -1,0 +1,109 @@
+package mall.assistant.deleteItem;
+
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import mall.assistant.alertMaker.alertMaker;
+import mall.assistant.database.DatabaseHandler;
+
+public class deleteItemController implements Initializable {
+	
+	@FXML
+	private JFXTextField searchItem;
+	
+	@FXML
+	private ListView<String> listItem;
+	
+	@FXML
+	private JFXButton deleteItembtn, cancelben;
+	
+	@FXML
+	private AnchorPane rootPane;
+	
+	DatabaseHandler databaseHandler;
+	boolean isSuccess;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		databaseHandler = DatabaseHandler.getInstance();
+	}
+	
+	@FXML
+	private boolean searchItem() {
+		ObservableList<String> listData = FXCollections.observableArrayList();
+		String idName = searchItem.getText();
+		String qu1= "SELECT * FROM ITEM WHERE item_id = '"+idName+"' OR item_name = '"+idName+"'";
+		ResultSet rs = databaseHandler.execQuery(qu1);
+		try {
+			while(rs.next()) {
+				String id = rs.getString("item_id");
+				String name = rs.getString("item_name");
+				double price = rs.getDouble("price");
+				int inventory = rs.getInt("inventory");
+				String cid = rs.getString("cid");
+				
+				listData.add("Item ID : "+id);
+				String qu = "SELECT * FROM CATEGORY WHERE category_id = '"+cid+"'";
+				ResultSet rsC = databaseHandler.execQuery(qu);
+				while(rsC.next()) {
+					String category = rsC.getString("category_name");
+					listData.add("Item Category :" + category);
+				}
+				listData.add("Item Name : "+name);
+				listData.add("Item Price : "+price);
+				listData.add("Item Inventory : "+inventory);
+				isSuccess = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(isSuccess) {
+			listItem.getItems().setAll(listData);
+			isSuccess = false;
+			return true;
+		}else {
+			listData.add("");
+			listData.add("");
+			listData.add("");
+			listData.add("\t\tNo Item Found, Please Check your Enter!");
+			listItem.getItems().setAll(listData);
+			return false;
+		}
+	}
+	
+	@FXML
+	private void deleteItem() {
+		if(!searchItem()) {
+			alertMaker.showErrorMessage(null, "No Item hase been Found, Delete Failed!");
+		}else {
+			String idName = searchItem.getText();
+			String qu = "DELETE FROM ITEM WHERE item_name = '"+idName+"' OR item_id = '"+idName+"'";
+			if(databaseHandler.execAction(qu)) {
+				alertMaker.showSimpleAlert(null, "The Item has been deleted, Delete Success!");
+			}else {
+				alertMaker.showErrorMessage(null, "Delete Failed!");
+			}
+		}
+	}
+	
+	@FXML
+	private void cancel() {
+		Stage stage = (Stage)rootPane.getScene().getWindow();
+		stage.close();
+	}
+
+}

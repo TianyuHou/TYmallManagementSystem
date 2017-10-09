@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.uiMainPage.MainUIController">
+   <children>
+      <AnchorPane fx:id="h_menu" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #1D2026;" styleClass="menuBG" stylesheets="@MainUI.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="300.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../../Image/7db443580f995faaae6c570cd6292c0e.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="157.0" fitWidth="300.0" layoutY="441.4820098876953" opacity="0.76" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../Image/6.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="58.0" layoutY="61.0" prefHeight="73.0" prefWidth="195.0" text="Welcome To TY Mall &#10;Management System" textFill="#f6f6f6">
+               <font>
+                  <Font name="Microsoft YaHei UI" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="50.0" layoutY="164.0" prefHeight="196.0" prefWidth="300.0" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="profile_btn" alignment="BASELINE_LEFT" graphicTextGap="30.0" layoutX="33.0" layoutY="40.0" onAction="#load_Page" prefHeight="40.0" prefWidth="260.0" styleClass="menubar" stylesheets="@../ui/login/application.css" text="Profile" textFill="#f2eded">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="item_btn" alignment="BASELINE_LEFT" graphicTextGap="21.0" layoutX="33.0" layoutY="90.0" onAction="#load_Page" prefHeight="40.0" prefWidth="260.0" styleClass="menubar" stylesheets="@../ui/login/application.css" text="Item Manage" textFill="#f2eded">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CUBES" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="staff_btn" alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="33.0" layoutY="140.0" onAction="#load_Page" prefHeight="40.0" prefWidth="260.0" styleClass="menubar" stylesheets="@../ui/login/application.css" text="Staff Manage" textFill="#f2eded">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="17" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <FontAwesomeIconView fill="WHITE" glyphName="GEAR" layoutX="59.0" layoutY="550.0" onMouseClicked="#loadSettings" size="20" styleClass="set_logout" />
+            <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" layoutX="190.0" layoutY="550.0" onMouseClicked="#exit" size="20" styleClass="set_logout" />
+            <Label layoutX="83.0" layoutY="535.0" onMouseClicked="#loadSettings" prefHeight="20.0" prefWidth="60.0" styleClass="set_logout" text="Setting" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="218.0" layoutY="535.0" onMouseClicked="#exit" prefHeight="20.0" prefWidth="60.0" styleClass="set_logout" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="h_item" layoutX="300.0" stylesheets="@MainUI.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="150.0" prefWidth="700.0" style="-fx-background-color: #BDBDBD;">
+               <children>
+                  <JFXTextField fx:id="searchText" layoutX="517.0" layoutY="51.0" promptText="ID/NAME">
+                     <font>
+                        <Font name="Arial Italic" size="13.0" />
+                     </font></JFXTextField>
+                  <Label layoutX="457.0" layoutY="55.0" text="Search">
+                     <font>
+                        <Font name="Franklin Gothic Medium Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="348.0" layoutY="96.0" prefHeight="51.0" prefWidth="350.0">
+                     <children>
+                        <JFXButton fx:id="additembtn" onAction="#loadAddItem" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Add Item">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#loadUpdateItem" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Update Item">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#deleteButtonClicked" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Delete Item">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <FontAwesomeIconView id="searchIcon" fx:id="searchIcon" fill="#090909" glyphName="SEARCH" layoutX="646.0" layoutY="68.0" size="15" />
+                  <Label layoutX="102.0" layoutY="50.0" text="ITEM MANAGEMENT">
+                     <font>
+                        <Font name="Gill Sans MT" size="25.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#3e597d" glyphName="HOME" layoutX="33.0" layoutY="75.0" size="60" stroke="WHITE" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="677.0" layoutY="20.0" onMouseClicked="#exit" size="16" styleClass="closebtn" />
+                  <FontAwesomeIconView glyphName="MINUS" layoutX="649.0" layoutY="20.0" onMouseClicked="#minimizeWindow" size="16" styleClass="minusbtn" />
+                  <FontAwesomeIconView fill="#575757" glyphName="REFRESH" layoutX="258.0" layoutY="132.0" onMouseClicked="#refreshTable" size="20" styleClass="refreshbtn" />
+                  <Label layoutX="282.0" layoutY="117.0" onMouseClicked="#refreshTable" styleClass="refreshtext" stylesheets="@MainUI.css" text="Refresh" textFill="#4e4e4e" underline="true">
+                     <font>
+                        <Font name="Arial Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="filter" layoutX="37.0" layoutY="109.0" promptText="Filter By Category">
+                     <font>
+                        <Font name="Arial Italic" size="13.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </Pane>
+            <AnchorPane layoutY="150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+               <children>
+                  <TableView fx:id="tableview" editable="true" prefHeight="425.0" prefWidth="700.0" style="-fx-background-color: WHITE;" styleClass="tableview" stylesheets="@MainUI.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableid" prefWidth="96.0" styleClass="tablecolumn" text="ID" />
+                        <TableColumn fx:id="tablepic" minWidth="3.888916015625" prefWidth="165.0" styleClass="tablecolumn" text="CATEGORYID" />
+                        <TableColumn fx:id="tablecategory" minWidth="3.888916015625" prefWidth="108.0" styleClass="tablecolumn" text="CATEGORY" />
+                      <TableColumn fx:id="tablename" prefWidth="143.0" styleClass="tablecolumn" text="NAME" />
+                        <TableColumn fx:id="tableinventory" prefWidth="83.66668701171875" styleClass="tablecolumn" text="INVENTORY" />
+                        <TableColumn fx:id="tableprice" prefWidth="105.33331298828125" styleClass="tablecolumn" text="PRICES" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Hyperlink layoutX="391.0" layoutY="575.0" onAction="#link" text="Link: @Author:Tianyu Hou's Portfolio/More Details" textFill="#306b98" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="9.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="h_staff" layoutX="310.0" layoutY="10.0" stylesheets="@MainUI.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane prefHeight="150.0" prefWidth="700.0" style="-fx-background-color: #BDBDBD;">
+               <children>
+                  <JFXTextField fx:id="searchstaffText" layoutX="517.0" layoutY="51.0" promptText="ID/NAME" />
+                  <Label layoutX="457.0" layoutY="55.0" text="Search">
+                     <font>
+                        <Font name="Franklin Gothic Medium Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="348.0" layoutY="96.0" prefHeight="51.0" prefWidth="350.0">
+                     <children>
+                        <JFXButton fx:id="addstaffbtn" onAction="#loadAddStaff" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Add Staff">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="updatestaffbtn" onAction="#loadUpdateStaff" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Update Staff">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="deletestaffbtn" onAction="#loadDeleteStaff" prefHeight="35.0" prefWidth="100.0" styleClass="itemEdit_btn" stylesheets="@MainUI.css" text="Delete Staff">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <FontAwesomeIconView id="searchIcon" fx:id="searchstaffIcon" fill="#090909" glyphName="SEARCH" layoutX="646.0" layoutY="68.0" size="15" />
+                  <Label layoutX="102.0" layoutY="50.0" text="STAFF MANAGEMENT">
+                     <font>
+                        <Font name="Gill Sans MT" size="25.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#3e597d" glyphName="GROUP" layoutX="33.0" layoutY="75.0" size="52" stroke="WHITE" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <FontAwesomeIconView glyphName="MINUS" layoutX="649.0" layoutY="20.0" onMouseClicked="#minimizeWindow" size="16" styleClass="minusbtn" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="677.0" layoutY="20.0" onMouseClicked="#exit" size="16" styleClass="closebtn" />
+                  <FontAwesomeIconView fill="#575757" glyphName="REFRESH" layoutX="258.0" layoutY="132.0" onMouseClicked="#refreshStaffTable" size="20" styleClass="refreshbtn" />
+                  <Label layoutX="282.0" layoutY="117.0" onMouseClicked="#refreshStaffTable" styleClass="refreshtext" stylesheets="@MainUI.css" text="Refresh" textFill="#4e4e4e" underline="true">
+                     <font>
+                        <Font name="Arial Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="filterStaff" layoutX="37.0" layoutY="109.0" prefHeight="24.0" prefWidth="183.0" promptText="Filter By Position/Department">
+                     <font>
+                        <Font name="Arial Italic" size="13.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </Pane>
+            <AnchorPane layoutY="150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+               <children>
+                  <TableView fx:id="tableviewStaff" editable="true" prefHeight="425.0" prefWidth="700.0" style="-fx-background-color: WHITE;" styleClass="tableview" stylesheets="@MainUI.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  	<placeholder>
+                  		<Label text="No Result To Display!" />
+                  	</placeholder>
+                     <columns>
+                        <TableColumn fx:id="tablestaffid" prefWidth="96.0" styleClass="tablecolumn" text="ID" />
+                        <TableColumn fx:id="tablestaffdep" minWidth="3.888916015625" prefWidth="165.0" styleClass="tablecolumn" text="DEPARTMENT" />
+                        <TableColumn fx:id="tablestaffname" minWidth="3.888916015625" prefWidth="108.0" styleClass="tablecolumn" text="NAME" />
+                        <TableColumn fx:id="tablestaffposition" prefWidth="143.0" styleClass="tablecolumn" text="POSITION" />
+                        <TableColumn fx:id="tablestaffmobile" prefWidth="83.66668701171875" styleClass="tablecolumn" text="MOBILE" />
+                        <TableColumn fx:id="tablestaffemail" prefWidth="105.33331298828125" styleClass="tablecolumn" text="E-MAIL" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Hyperlink layoutX="391.0" layoutY="575.0" onAction="#link" text="Link: @Author:Tianyu Hou's Portfolio/More Details" textFill="#306b98" underline="true" AnchorPane.bottomAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="h_profile" layoutX="683.0" layoutY="54.0" prefHeight="600.0" prefWidth="700.0" styleClass="menuBG" stylesheets="@MainUI.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="150.0" prefWidth="700.0" style="-fx-background-color: #BDBDBD;" styleClass="upmenu" stylesheets="@MainUI.css">
+               <children>
+                  <Label layoutX="205.0" layoutY="115.0" text="PROFILE">
+                     <font>
+                        <Font name="Gill Sans MT" size="25.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="MINUS" layoutX="649.0" layoutY="20.0" onMouseClicked="#minimizeWindow" size="16" styleClass="minusbtn" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="677.0" layoutY="20.0" onMouseClicked="#exit" size="16" styleClass="closebtn" />
+                  <JFXDatePicker fx:id="datepicker" defaultColor="#23589b" editable="false" layoutX="491.0" layoutY="103.0" promptText="Date" styleClass="date" stylesheets="@MainUI.css" />
+                  <JFXTimePicker fx:id="timepicker" defaultColor="#23589b" layoutX="491.0" layoutY="61.0" promptText="Time" styleClass="date" stylesheets="@MainUI.css" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="46.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Image/PROFILE.png" />
+               </image>
+            </ImageView>
+            <Pane layoutY="150.0" prefHeight="450.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <Label layoutX="532.0" layoutY="3.0" prefHeight="46.0" prefWidth="108.0" styleClass="titlelabel" stylesheets="@MainUI.css" text="Position:" textFill="#888888">
+                     <font>
+                        <Font name="Eras Medium ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="406.0" layoutY="3.0" prefHeight="46.0" prefWidth="108.0" styleClass="titlelabel" stylesheets="@MainUI.css" text="Name:" textFill="#888888">
+                     <font>
+                        <Font name="Eras Medium ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXDrawer layoutX="248.0" layoutY="188.0" prefHeight="46.0" prefWidth="86.0" />
+                  <JFXDialog layoutX="290.0" layoutY="99.0" prefHeight="35.0" prefWidth="68.0" />
+                  <Label layoutX="200.0" layoutY="3.0" prefHeight="46.0" prefWidth="108.0" styleClass="titlelabel" stylesheets="@MainUI.css" text="Department:" textFill="#888888">
+                     <font>
+                        <Font name="Eras Medium ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="299.0" layoutY="19.0" prefHeight="46.0" prefWidth="79.0" text="IT Services" textFill="#3f3f3f">
+                     <font>
+                        <Font name="Eras Light ITC" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="592.0" layoutY="19.0" prefHeight="46.0" prefWidth="79.0" text="Manager" textFill="#3f3f3f">
+                     <font>
+                        <Font name="Eras Light ITC" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="457.0" layoutY="19.0" prefHeight="46.0" prefWidth="79.0" text="Allen" textFill="#3f3f3f">
+                     <font>
+                        <Font name="Eras Light ITC" size="16.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#192274" glyphName="EDIT" layoutX="79.0" layoutY="192.0" onMouseClicked="#setEditable" size="25" styleClass="editbtn" />
+                  <Label layoutX="146.0" layoutY="124.0" text="Make A Conference" textFill="#192d5c">
+                     <font>
+                        <Font name="Eras Light ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="SAVE" layoutX="80.0" layoutY="272.0" onMouseClicked="#setUnEditable" size="25" styleClass="editbtn" />
+                  <VBox layoutX="146.0" layoutY="163.0" prefHeight="157.0" prefWidth="499.0">
+                     <children>
+                        <HBox prefHeight="32.0" prefWidth="499.0">
+                           <children>
+                              <Label text="Set Date" textFill="#192d5c">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="100.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label text="Set Time" textFill="#192d5c">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="100.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label text="Set Location" textFill="#192d5c">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="100.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="32.0" prefWidth="499.0">
+                           <children>
+                              <JFXTextField fx:id="condate" prefHeight="26.0" prefWidth="90.0" promptText="Date" unFocusColor="#c2c2c2">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="contime" prefHeight="26.0" prefWidth="87.0" promptText="Time" unFocusColor="#c2c2c2">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="30.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="conlocation" prefHeight="23.0" prefWidth="124.0" promptText="Location" unFocusColor="#c2c2c2">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="60.0" right="30.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="32.0" prefWidth="499.0">
+                           <children>
+                              <Label text="Description" textFill="#192d5c">
+                                 <font>
+                                    <Font name="Eras Light ITC" size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="100.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="48.0" prefWidth="499.0">
+                           <children>
+                              <JFXTextArea fx:id="condescription" prefHeight="58.0" prefWidth="499.0" promptText="Write A short Description To Show How it works" unFocusColor="#c2c2c2">
+                                 <HBox.margin>
+                                    <Insets left="28.0" right="29.0" />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Eras Light ITC" size="12.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children>
+                        </HBox>
+                     </children></VBox>
+                  <Label layoutX="76.0" layoutY="193.0" onMouseClicked="#setEditable" styleClass="editlabel" stylesheets="@MainUI.css" text="Edit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="274.0" onMouseClicked="#setUnEditable" prefHeight="24.0" prefWidth="51.0" styleClass="editlabel" stylesheets="@MainUI.css" text="Save">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Hyperlink layoutX="391.0" layoutY="575.0" onAction="#link" text="Link: @Author:Tianyu Hou's Portfolio/More Details" textFill="#306b98" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="9.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="root" fx:id="root" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="550.0" prefWidth="900.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mall.assistant.ui.login.loginController">
+   <children>
+      <JFXTextField fx:id="username" labelFloat="true" layoutX="618.0" layoutY="214.0" prefHeight="30.0" prefWidth="230.0" promptText="Username" stylesheets="@application.css" unFocusColor="#888888">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" labelFloat="true" layoutX="618.0" layoutY="286.0" onAction="#login" prefHeight="30.0" prefWidth="230.0" promptText="Password" stylesheets="@application.css" unFocusColor="#888888">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="loginbtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="653.0" layoutY="363.0" onAction="#login" prefHeight="40.0" prefWidth="160.0" stylesheets="@application.css" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="550.0" fitWidth="550.0" layoutX="8.0" layoutY="-8.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../Image/5.jpg" />
+         </image></ImageView>
+      <Hyperlink id="forgetlink" fx:id="forgot" alignment="CENTER" layoutX="670.0" layoutY="428.0" onAction="#link" stylesheets="@application.css" text="Forgot Password?" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+      <Label alignment="CENTER" layoutX="683.0" layoutY="125.0" text="Sign In" textFill="#8bc3ff">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="118.0" prefHeight="132.0" prefWidth="565.0" text="Welcome To TY Mall Management System !" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="143.0" prefHeight="209.0" prefWidth="488.0" text="In here you can manage your commodities &#10;more conveniently and fast." textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="signupbtn" buttonType="RAISED" layoutX="47.0" layoutY="295.0" onAction="#link" prefHeight="25.0" prefWidth="90.0" stylesheets="@application.css" text="Sign Up" textFill="WHITE" />
+      <FontAwesomeIconView fill="#3c749e" glyphName="USER" layoutX="591.0" layoutY="247.0" size="23" />
+      <MaterialDesignIconView fill="#3c749e" glyphName="KEY" layoutX="589.0" layoutY="316.0" size="23" />
+      <Hyperlink fx:id="linktyh" layoutX="767.0" layoutY="524.0" onAction="#link" text="Author@ Tianyu Hou" textFill="#739fc7" underline="true">
+         <font>
+            <Font name="Arial Italic" size="13.0" />
+         </font>
+      </Hyperlink>
+      <Label fx:id="notation" layoutX="586.0" layoutY="332.0" text="Username and Password doesn't match!" textFill="#ff0f0f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fx:id="closebtn" fill="#696969" glyphName="CLOSE" layoutX="871.0" layoutY="25.0" onMouseClicked="#close" size="18" styleClass="controlbtn" />
+      <FontAwesomeIconView fx:id="minusbtn" fill="#696969" glyphName="MINUS" layoutX="843.0" layoutY="26.0" onMouseClicked="#minimizeBtnAction" size="18" styleClass="controlbtn" />
+   </children>
+</AnchorPane>

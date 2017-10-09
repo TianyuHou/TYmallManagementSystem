@@ -1,0 +1,37 @@
+.edit_textfield{
+	-fx-font-family: Arial;
+	-fx-font-size: 14;
+	-fx-font-style: Italic;
+}
+.save_btn{
+	-fx-background-color: #1565C0;
+	-fx-border-radius: 0;
+}
+.save_btn:hover{
+	-fx-background-color: #e53935;
+}
+.cancel_btn{
+	-fx-background-color: #1565C0;
+	-fx-border-radius: 0;
+}
+.cancel_btn:hover{
+	-fx-background-color: #e53935;
+}
+#searchbtn{
+	-fx-fill: black;
+}
+#searchbtn:hover{
+	-fx-fill: red;
+}
+.minusbtn{
+	-fx-fill:gray;
+}
+.minusbtn:hover{
+	-fx-fill:red;
+}
+.closebtn{
+	-fx-fill:gray;
+}
+.closebtn:hover{
+	-fx-fill:red;
+}
